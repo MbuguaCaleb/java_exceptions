@@ -65,4 +65,59 @@ Errors external to our applications.
 3.RuntimeException.
 
 
+If an exception inherits from a parant there is no need to metion the 
+child if i have the parent already declared.
+
+```
+
+**Finally Block in Error Cathching**
+
+```yaml
+
+It is very very important since here we put code that must be executed, for example closing 
+connection.
+
+If you had opened a connection eg a file reader and the control moved to a catch block, you 
+may find that the connection will remain unclosed if not for a finally block.
+
+
+Thr finally block is executed both after the code fails or runs successfully.
+
+Refer to my Java Exeptions gist for the code,
+
+
+```
+
+
+**The Try with Resources**
+
+```yaml
+
+
+ //Better ways to release external resources//Example Database and File Handle connections //It is an improvement of the finally block.
+
+//In Java we can initialize our external resources as part of the try statement
+
+//using a try with resources we do not have to explicitly close our connection in the finally block.
+
+//Java compiler will do that for us.
+//what is passed after the try is a resource an Java will automatically close it for us.
+
+```
+
+**Rethrowing Exceptions**
+
+```yaml
+
+
+What if we do not want our code to break silently because when we hanlde the exceptions our
+code keeps executing or logs to the DB...
+
+
+we can rethtow and exception and forward it to my next block cof code.
+
+Throwable class can be used where i am not sure of the specific exceptiion
+to call.
+
+
 ```

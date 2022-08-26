@@ -2,26 +2,25 @@ package com.codewithcaleb.exceptions;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 public class ExceptionsDemo {
 
+    //When we throw an exception the caller of this method shouls handle the exception
+    public static void show() throws IOException{
+        var account = new Account();
 
-    //Static methods can be easily called without having to keep instantiating an Object
-    public static void show(){
 
+        //handling the exception thrown by the withdraw method
         try {
-            var reader = new FileReader("file.txt");
-        } catch (FileNotFoundException e) {
-            //throw new RuntimeException(e);
+            account.withdraw(10);
+        } catch (InsufficientFundsException e) {
             System.out.println(e.getMessage());
-            e.printStackTrace();
         }
 
-
     }
 
-
-    public static void sayHello(String name){
-        System.out.println(name.toUpperCase());
-    }
 }
