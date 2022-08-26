@@ -17,7 +17,12 @@ public class ExceptionsDemo {
         try {
             account.withdraw(10);
         } catch (AccountException e) {
-           e.printStackTrace();
+            var cause = e.getCause();
+
+            //i can get the method that causes that paritcular exception when chaining exceptions
+            System.out.println(cause);
+            System.out.println(cause.getMessage());
+           //e.printStackTrace();
             // System.out.println(e.getMessage());
         }
 
